@@ -1,0 +1,47 @@
+  <!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="w3-sidebar w3-bar-block w3-card w3-teal" style="width:25%;right:0;">
+  <button *ngIf="!secservice.kc.authenticated" style="height: 60px;font-weight: 900;width: 150px;" class="login w3-button" (click)="onLogin()">Sign in</button>
+  <div class="drop" *ngIf="secservice.kc.authenticated">
+    <button class="dropbttn">{{secservice.kc.tokenParsed.preferred_username}}</button>
+    <div class="drop-content">
+      <a class="w3-button" (click)="onLogout()">Log out</a>
+      <a class="w3-button" (click)="onChangePassword()">Change password</a>
+    </div>
+  </div>
+  <h3 class="w3-bar-item">Menu</h3>
+  <div class="dropdown active w3-bar-item w3-button">
+  <a routerLink="/product">Products</a>
+    <div class=" dropdown-content">
+      <a class="w3-bar-item w3-button" routerLink="/formproduct">Ajouter Products</a>
+  </div></div>
+  <div class="dropdown active w3-bar-item w3-button">
+  <a routerLink="/customer">Customers</a>
+    <div class=" dropdown-content">
+      <a class="w3-bar-item w3-button" routerLink="/formcustomer">Ajouter Customers</a>
+    </div></div>
+  <div align="center"><button routerLink="/bill" class=" w3-button margin">Make Your Bill</button></div>
+
+</div>
+
+<!-- Page Content -->
+<div style="margin-right:25%">
+
+  <div class="w3-container w3-teal">
+    <button style="height: 60px;font-weight: 900;width: 150px;" class="w3-button" routerLink="">E-COM</button>
+  </div>
+</div>
+</body>
+</html>

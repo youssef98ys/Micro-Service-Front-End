@@ -1,0 +1,36 @@
+<div [hidden]="!bill">
+<mat-card>
+  <mat-card-header><h1>Bill Informations:</h1></mat-card-header>
+<mat-card-content>
+<mat-list>
+  <mat-list-item>
+    <h4>Date: </h4>{{bill.billingDate}}
+  </mat-list-item>
+    <mat-list-item>
+      <h4>Customer id: </h4>{{bill.customer.id}}
+    </mat-list-item>
+    <mat-list-item>
+      <h4>Customer name: </h4>{{bill.customer.name}}
+    </mat-list-item>
+    <mat-list-item>
+      <h4>Customer email: </h4>{{bill.customer.email}}
+    </mat-list-item>
+    <mat-list-item>
+      <h2>Liste des produits: </h2>
+    </mat-list-item>
+</mat-list>
+  <mat-list  *ngFor="let p of bill.productItems">
+<mat-list-item>
+    <h4>Product name: </h4>
+    <h6>{{p.product.name}}</h6></mat-list-item>
+    <mat-list-item>
+    <h4>Product price: </h4>
+    <h6>{{p.price}}</h6>
+    </mat-list-item>
+  </mat-list>
+</mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-stroked-button>BACK</button>
+  </mat-card-actions>
+</mat-card>
+</div>

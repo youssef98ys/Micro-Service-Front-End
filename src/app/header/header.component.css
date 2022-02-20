@@ -1,0 +1,86 @@
+.margin{
+  margin-top: 30px;
+  background-color: antiquewhite;
+  color: #009688;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+  height: 80px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:#009688;
+  color: white;
+  min-width: 60px;
+  box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.5);
+  padding: 4px 6px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropbtn {
+  background-color: #009688;
+  color: white;
+  padding: 7px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.drop {
+  margin-left: 220px;
+  margin-top: 10px;
+  position: relative;
+  display: inline-block;
+}
+.dropbttn {
+  background-color: #009688;
+  color: white;
+  padding: 10px;
+  width: 160px;
+  font-size: 16px;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+.drop-content {
+  display: none;
+  position: absolute;
+  text-align: center;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  cursor: pointer;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.drop-content a {
+  color: black;
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
+}
+
+.drop-content a:hover {background-color: #009688}
+
+.drop:hover .drop-content {
+  display: block;
+}
+
+.drop:hover .dropbttn {
+  color: #009688;
+  background-color: #ffffff;
+}
+.login{
+  margin-left: 220px;
+  margin-top: 10px;
+}

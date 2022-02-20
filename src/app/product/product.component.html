@@ -1,0 +1,22 @@
+<h1 align="center">Products Table</h1>
+
+<table id="products">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let c of products._embedded.products">
+    <td>{{c.id}}</td>
+    <td>{{c.name}}</td>
+    <td>{{c.price}}</td>
+    <td>{{c.quantity}}</td>
+    <td><button class="success" [routerLink]="['/formproduct', c.id]">update</button></td>
+    <td><button class="danger" (click)="supprimerProduct(c.id)">delete</button></td>
+  </tr>
+
+
+</table>

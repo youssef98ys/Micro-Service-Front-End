@@ -1,0 +1,24 @@
+
+<h1 align="center">Customers Table</h1>
+<ng-container *ngIf="customersState$ | async as state">
+<table id="customers">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let c of state.customers._embedded.customers">
+    <td>{{c.id}}</td>
+    <td>{{c.name}}</td>
+    <td>{{c.email}}</td>
+    <td><button class="success" [routerLink]="['/formcustomer', c.id]">update</button></td>
+    <td><button mat-button style="background-color: red; color: #dddddd" (click)="supprimerCustomer(c.id)">delete</button></td>
+  </tr>
+
+
+</table>
+
+
+</ng-container>

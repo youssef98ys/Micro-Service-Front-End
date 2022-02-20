@@ -1,0 +1,41 @@
+<div>
+  <h3 align="center">Add your Customer</h3>
+  <p>{{ customerForm.value | json }} {{ customerForm.status | json }}</p>
+  <div class="position">
+    <mat-card class="size">
+      <form [hidden]="hideForm || redirect" novalidate [formGroup]="customerForm" #cform="ngForm" (ngSubmit)="onSubmit()">
+        <p>
+
+          <mat-form-field class="half-width">
+            <input style="color: #009688" matInput formControlName="id" placeholder="id" type="number" required>
+            <mat-error *ngIf="formErrors.id">{{formErrors.id}}</mat-error>
+          </mat-form-field>
+          <mat-form-field class="half-width">
+            <input style="color: #009688" matInput formControlName="name" placeholder="name" type="text" required>
+            <mat-error *ngIf="formErrors.name">{{formErrors.name}}</mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="email-width">
+            <input style="color: #009688" matInput formControlName="email" placeholder="email" type="email" email required>
+            <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error>
+          </mat-form-field>
+        <p>
+        <table class="form-size">
+        </table>
+        <p align="center">
+          <button type="submit" [disabled]="customerForm.invalid" mat-button class="w3-teal text-floral-white">Submit</button>
+        </p>
+      </form>
+
+      <div [hidden]="!hideForm || redirect" align="center">
+        <h4 style="color: #009688">Submitting Form</h4>
+        <mat-spinner></mat-spinner>
+      </div>
+      <div [hidden]="!redirect" align="center">
+        <h4 style="color: #009688">Submitting Form</h4>
+        <button routerLink="/customer" mat-button class="background-primary text-floral-white">Back to Customers List</button>
+      </div>
+    </mat-card>
+  </div>
+</div>
